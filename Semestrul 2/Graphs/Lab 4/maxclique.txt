@@ -1,0 +1,15 @@
+Retrieve the list of vertices from the graph using graph.parseKeys().
+
+Initialize an empty list max_clique to store the maximum clique found.
+
+Generate all possible subsets of vertices using the combinations function from the itertools module. The subsets are generated for different lengths ranging from 1 to the total number of vertices. These subsets represent potential cliques.
+
+Iterate over each subset:
+1 Set a flag is_clique to True initially, assuming the subset forms a clique.
+2 Check each pair of vertices in the subset to verify if there is an edge between them. If an edge is missing, set is_clique to False.
+3 If at any point is_clique becomes False, break the inner loop since the subset is not a clique.
+4 If the subset is a clique (i.e., is_clique is still True), compare its length with the length of the max_clique found so far. If it is greater, update max_clique with the current subset.
+
+After checking all subsets, max_clique will contain the maximum clique found in the graph.
+
+Return max_clique as the result.
