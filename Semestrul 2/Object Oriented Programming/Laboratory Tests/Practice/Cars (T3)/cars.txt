@@ -1,0 +1,10 @@
+Toyota,2020,Camry,Red
+Honda,2018,Civic,Blue
+Ford,2019,Mustang,Black
+Chevrolet,2001,Corvette,White
+BMW,2017,3 Series,Silver
+Audi,2016,A4,Gray
+Mercedes-Benz,2022,E-Class,Black
+Volkswagen,2011,Golf,White
+Tesla,2023,Model S,Blue
+Lexus,2012,RX,Red

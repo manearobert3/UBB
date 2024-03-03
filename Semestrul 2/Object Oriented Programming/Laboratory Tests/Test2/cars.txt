@@ -1,0 +1,5 @@
+Body style of car is : Convertible
+type of engine is: Electric
+Autonomy is: 40
+Body style of car is : Sedan
+type of engine is: Turbo

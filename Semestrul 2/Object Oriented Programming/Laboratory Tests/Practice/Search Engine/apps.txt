@@ -1,0 +1,3 @@
+C++ | progam lang, obj-or | It is a general
+Quadratic Eq | sq root, disc | a*x^2+b
+Java | prog lang, web | Java is well done
