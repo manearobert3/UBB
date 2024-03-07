@@ -1,0 +1,10 @@
+subplot(3,1,1)
+p=linspace(0,3);
+y=p.^5/10;
+plot(p,y)
+subplot(3,1,2)
+z=p.*sin(p);
+plot(p,z)
+subplot(3,1,3)
+t=cos(p);
+plot(p,t);

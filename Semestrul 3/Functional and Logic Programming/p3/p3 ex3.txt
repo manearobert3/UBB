@@ -1,0 +1,47 @@
+% Predicate to generate a pair (A, B) such that A + B = N
+% generate_pair(i,o,o)
+% generate_pair(N int, A int, B int);
+generate_pair(N, A, B) :-
+    my_range(1, N, B),
+    my_range(1, N, A),
+    A < B,
+    N =:= A + B.
+
+
+% Predicate to generate a range of integers between Lower and Upper
+% Predicate to check if a value is between Lower and Upper (inclusive)
+% my_range (i,i,o);
+% my_range(Lower int, Upper int, Value int);	
+my_range(Lower, Upper, Value) :-
+    Lower =< Upper,
+    Value = Lower.
+my_range(Lower, Upper, Value) :-
+    Lower < Upper,
+    NextLower is Lower + 1,
+    my_range(NextLower, Upper, Value).
+
+% Predicate to decompose a number N into a list of integers with consecutive values
+% decompose(i,o)
+% decompose(N int, L list)
+decompose(N, [N]).
+decompose(N, [X|L]) :- 
+    generate_pair(N, X, Y), 
+    decompose(Y, L).
+
+% Predicate to check if a list has consecutive values
+% is_consecutive(L - list)
+% is_consecutive(i)
+is_consecutive([X,Y]):- X + 1 =:= Y.
+is_consecutive([H1,H2|T]):- H2 =:= H1 + 1, is_consecutive([H2|T]).
+
+% Predicate to find all decompositions of N into consecutive values
+% n_as_sum_of_consecutives(i,o)
+% n_as_sum_of_consecutives(N int, L list);=
+n_as_sum_of_consecutives(N, L) :- 
+    decompose(N, X), 
+    is_consecutive(X), 
+    L = X.
+
+% Main predicate to find all decompositions for a given number
+find_all_decompositions(N, Result) :- 
+    findall(R, n_as_sum_of_consecutives(N, R), Result).
