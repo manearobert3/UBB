@@ -1,0 +1,130 @@
+9.
+
+mergeSort(l1,..,ln;q1,...,qn)=
+{
+l1,...,ln if q is null
+q1,...,qn if l is null
+l1 <= l2 l1 U mergeSort(l2,...,ln,q1,...,qn)
+else q1 U mergeSort(l1,...,ln,q2,...,qn)
+}
+
+a) Write a function that merges two sorted linear lists and keeps double values
+(defun mergeSort (list1 list2)
+  (cond
+    ((null list1) list2)
+    ((null list2) list1)
+    ((<= (car list1) (car list2))
+     (cons (car list1) (mergeSort (cdr list1) list2)))
+    (t
+     (cons (car list2) (mergeSort list1 (cdr list2))))))
+(setq list1 '(-1 2 3 5 7))
+(setq list2 '(2 4 6 7 8))
+
+(print (mergeSort list1 list2))
+
+
+b)
+replaceElem(e,l1.1,..,l1.n;l)={
+l=e && l is atom , l U replaceElem(e;l2.2,...,l2.n;l)
+if l is list, replaceElem(e;l2.2,..l2.n;l)
+
+}
+(defun replaceElem (e l1 l)
+  (if (atom l)
+      (if (eql l e) l1 l)
+      (mapcar #'(lambda (x) (replaceElem e l1 x)) l)))
+
+(setq inputList '(1 2 (3 4) 5 (1 (2 3) 4)))
+(setq replacementElement 3)
+(setq replacementList '(a b c))
+
+(print (replaceElem replacementElement replacementList inputList))
+
+
+c)
+addLists (l1,l2,...,ln;q1,q2,q3...,qn)={
+if l is null return q
+if l1+q1 >10 carry=1 else carry =0
+if l1+q1 > 10 addLists(l2,l3,...,ln;q2+carry,q3,...,qn)
+else addLists(l2,l3,...,ln;q2,q3,...,qn)
+
+(defun addLists (list1 list2)
+  (if (null list1)
+      (if (zerop (car list2))
+          list2
+          (cons (car list2) (cdr list2)))
+      (let* ((sum (+ (car list1) (car list2)))
+             (carry (if (< sum 10) 0 1)))
+        (cons (mod sum 10) 
+              (addLists (cdr list1) 
+                              (if (cdr list2) 
+                                  (cons (+ (cadr list2) carry) (cddr list2))
+                                  (list carry)))))))
+
+
+
+(defun printResult (lst)
+  (let ((non-zero-found nil))
+    (dolist (digit (reverse lst))
+      (when (or non-zero-found (/= digit 0))
+        (format t "~a" digit)
+        (setq non-zero-found t)))))
+
+;; Example usage:
+(let ((num1 '(1 2))    ; Represents the number 12
+      (num2 '(7 8)))  ; Represents the number 78
+  (let ((result (addLists (reverse num1) (reverse num2))))
+    (printResult result)))
+
+
+
+d)
+gcdList (l1,...,ln)={
+numbers = 0 => null
+if n=1 return l1;]
+else
+l1 U gcd(l2,...,ln);
+}
+(defun gcd(l1,gcdList(l2,...,ln));
+  (if (null numbers)
+      1
+      (if (= 1 (length numbers))
+          (car numbers)
+          (gcd (car numbers) (gcdList (cdr numbers))))))
+(setq numberList '(12 18 24 30))
+
+(print (gcdList numberList))
+
+d) without gcd function
+my-gcd (a,b)={
+if b = 0 return a
+else my-gcd(b,a mod b)
+
+list-gcd(l1,l2,..,ln;curr)={
+if list is empty return 0
+if n=1 my-gcd(l1,curr) return curr;
+list-gcd(l2,...,ln;curr)
+
+(defun my-gcd (a b)
+  "Calculate the greatest common divisor of two numbers."
+  (if (= b 0)
+      a
+      (my-gcd b (mod a b))))
+
+(defun list-gcd (numbers current-gcd)
+  "Calculate the greatest common divisor of numbers in a linear list."
+  (if (endp numbers)
+      (if current-gcd
+          current-gcd
+          0) ; GCD of an empty list is 1
+      (if (= (length numbers) 1)
+          (if current-gcd
+              (my-gcd current-gcd (car numbers))
+              (car numbers)) ; GCD of a single number is the number itself
+          (list-gcd (cdr numbers) (if current-gcd
+                                       (my-gcd current-gcd (car numbers))
+                                       (car numbers))))))
+
+;; Example usage:
+(setq numbers-list '(18 24 36))
+(format t "GCD of the list ~a is: ~a" numbers-list (list-gcd numbers-list 0))

@@ -1,0 +1,45 @@
+;countOcc(l1,l2,...,ln,element)=
+;{ nil if list is null
+;{ 1+countOcc(l2,...,ln,element) if l1=e;
+;{ countOcc(l2,...,ln,element) otherwise;
+
+
+(defun countOcc (list e)
+    (cond
+        ((null list) 0)
+        ((equal (car list) e) (+ 1 (countOcc (cdr list) e)))
+        (T (countOcc (cdr list) e))
+    )
+)
+
+;removeDuplicates(l1,...,ln,e)=
+;{ nil if list is null
+;{ removeDuplicates(l2,...,ln,e) if l1==e;
+;{ l1 U removeDuplicates(l2,...,ln,e), otherwise;
+
+(defun removeDuplicates (list e)
+    (cond
+        ((null list) nil)
+        ((equal (car list) e) (removeDuplicates (cdr list) e))
+        (T (cons (car list) (removeDuplicates (cdr list) e)))
+    )
+)
+
+; countMain(l1,...,ln)=
+;{ nil if list is null
+;{ (l1 countOcc(l1,..,ln,l1)) U countMain(removeDuplicates(l1,..,ln,l1)); otherwise
+
+(defun countMain (list)
+    (cond
+        ((null list) nil)
+        (T (cons (list(car list) (countOcc list (car list))) (countMain (removeDuplicates list (car list)))))
+    )
+)
+
+
+
+
+(print (countMain '(A B A B A C A)))
+(print (countMain '(A A A A A)))
+(print (countMain '(A B C D E F)))
+(print (countMain '(A B C B A)))

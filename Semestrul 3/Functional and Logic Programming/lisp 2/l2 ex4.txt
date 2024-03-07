@@ -1,0 +1,31 @@
+
+
+convert(l1,l2,...,ln)={
+if l is null return null
+if l2 is atom {l1 0} U convert(l2,l3,...ln)
+else{
+converted-right = convert(l3)
+converted-left = convert(l2)
+if l2 is null => left-count = 0 else left-count = 1
+if l3 is null => right-count = 0 else right-count = 1
+{l1 left-count+right-count} + converted-left + converted-right
+}
+(defun convert-type-2-to-type-1 (tree)
+  (cond
+    ((null tree) nil)
+    ((atom (cadr tree))
+     (list (car tree) 0))
+    (t
+     (let* ((converted-left (convert-type-2-to-type-1 (cadr tree)))
+            (converted-right (convert-type-2-to-type-1 (caddr tree)))
+            (left-count (if (null converted-left) 0 1))
+            (right-count (if (null converted-right) 0 1)))
+       (cons (car tree)
+             (cons (+ left-count right-count)
+                   (append converted-left converted-right)))))))
+
+
+;; Example usage:
+(setq example-tree '(A (B) (C (D) (E))))
+(setq converted-tree (convert-type-2-to-type-1 example-tree))
+(print converted-tree)

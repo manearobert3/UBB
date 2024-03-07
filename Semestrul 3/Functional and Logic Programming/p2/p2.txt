@@ -1,0 +1,40 @@
+13.
+a. Given a linear numerical list write a predicate to remove all sequences of consecutive values. 
+Eg.: remove([1, 2, 4, 6, 7, 8, 10], L) will produce L=[4, 10].
+b. For a heterogeneous list, formed from integer numbers and list of numbers; write a predicate to delete from 
+every sublist all sequences of consecutive values.
+Eg.: [1, [2, 3, 5], 9, [1, 2, 4, 3, 4, 5, 7, 9], 11, [5, 8, 2], 7] =>
+[1, [5], 9, [4, 7, 9], 11, [5, 8, 2], 7] 
+
+
+
+%remove_Consecutive(L:List,R:List);
+%flow remove_Consecutive(i,o);
+remove_Consecutive([],[]).
+remove_Consecutive([X],[X]).
+remove_Consecutive([X,Y],[]):-
+    Y is X+1.
+remove_Consecutive([X,Y],[X,Y]):-
+    Y =\= X+1.
+remove_Consecutive([X,Y,Z|T],Result):-
+    Y is X+1,
+    Z is Y+1,
+    remove_Consecutive([Y,Z|T],Result).
+remove_Consecutive([X,Y,Z|T],Result):-
+    Y is X+1,
+    Z =\= Y+1,
+    remove_Consecutive([Z|T],Result).
+remove_Consecutive([X,Y,Z|T],[X|Result]):-
+   	Y =\= X+1,
+    remove_Consecutive([Y,Z|T],Result).
+
+%second_list(L:List,R:List);
+%flow second_list(i,o);
+second_List([], []).
+second_List([H|T],[X|R]) :-
+    is_list(H),
+    !,
+    remove_Consecutive(H,X),
+    second_List(T,R).
+second_List([H|T],[H|R]) :-
+    second_List(T,R).
