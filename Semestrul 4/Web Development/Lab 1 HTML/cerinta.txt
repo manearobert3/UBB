@@ -1,0 +1,22 @@
+<img>,✅
+<a>,✅
+<table>,✅
+<br>, ✅
+<hr>,✅
+<p>,✅
+<b>,✅
+<div>,✅
+<ul>,✅
+ <li>,✅
+ <section>,✅
+ <article>,✅
+<footer>,✅
+<header>,✅
+<aside>,✅
+<nav>,✅
+ <svg>,
+<audio>,✅
+<video>,✅
+<figure>,✅
+<figurecaption>,✅
+<main>. 
