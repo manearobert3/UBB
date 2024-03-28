@@ -1,0 +1,56 @@
+.google-logo {
+  width: 13px;
+}
+.layout-right-new {
+  max-width: 275px;
+  margin-left: 15px;
+  border-radius: 15px;
+  margin-top: 10px;
+  border: 1px solid #edecec;
+  display: grid;
+}
+
+.connect-head-signup-terms {
+  margin-left: 10px;
+  padding-left: 8px;
+  margin-top: 10px;
+  font-size: 10px;
+  color: rgb(83, 100, 113);
+  margin-right: 5px;
+  padding-bottom: 8px;
+}
+.connect-head-signup {
+  margin-left: 10px;
+
+  margin-top: 10px;
+  font-size: 11px;
+  color: rgb(83, 100, 113);
+  margin-right: 5px;
+}
+.connect-head-new {
+  margin-top: 10px;
+  font-size: 15px;
+  margin-left: 15px;
+  font-weight: 700;
+  margin-right: 5px;
+}
+.layout-right-connect {
+  display: grid;
+}
+.connect-head {
+  width: 85%;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 15px;
+  margin-top: 10px;
+  border: 1px solid #c2c2c2;
+  font-size: 13px;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  text-align: center;
+}
+
+.apple-logo {
+  width: 12px;
+}
