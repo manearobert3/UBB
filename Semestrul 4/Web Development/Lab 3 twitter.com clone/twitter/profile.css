@@ -1,0 +1,126 @@
+.the-bg-picture {
+  width: 100%;
+}
+.under-background-picture {
+  min-height: 100px;
+}
+.x-profile-image {
+  width: 100px;
+  position: absolute;
+  left: 20px;
+  top: 150px;
+  border: 1px solid rgba(255, 255, 255, 35);
+  border-width: 3px;
+  border-radius: 10px;
+}
+.profile {
+  position: relative;
+
+  border-bottom: 1px solid rgb(209, 213, 217, 0.4);
+}
+
+.profile-description-1 {
+  padding-top: 60px;
+  margin-left: 15px;
+  display: grid;
+
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: 2px;
+}
+
+.profile-name {
+  margin-bottom: 2px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.bio {
+  padding-top: 10px;
+}
+.contacts {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  display: flex;
+  gap: 15px;
+  color: rgb(139, 141, 143);
+}
+.svgs {
+  width: 15px;
+  height: 15px;
+}
+.followers {
+  display: flex;
+  margin-bottom: 25px;
+}
+.followers-info {
+  margin-left: 3px;
+  margin-right: 5px;
+  font-size: 13px;
+  color: rgb(83, 100, 113);
+  margin-right: 15px;
+}
+.followers-bold {
+  margin-bottom: 2px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.navbar li {
+  display: inline;
+  justify-content: space-around;
+  padding-top: 15px;
+}
+.navbar a {
+  float: left;
+  font-size: 14px;
+  color: rgb(83, 100, 113);
+
+  width: 16%;
+  text-align: center;
+}
+.navbar ul li .current-nav a {
+  color: black;
+  font-weight: 700;
+  border-bottom: 4px solid rgb(29 161 242);
+}
+.navbar-tweets li {
+  display: inline;
+  justify-content: space-around;
+  padding-top: 15px;
+  text-align: center;
+  padding-bottom: 15px;
+}
+.navbar-tweets {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  left: 15px;
+  font-size: 1px;
+  font-weight: 300;
+}
+.navbar-tweets ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.navbar-tweets a {
+  float: left;
+  font-size: 14px;
+  color: rgb(83, 100, 113);
+
+  width: 20%;
+  text-align: center;
+}
+.navbar-svgs {
+  height: 15px;
+}

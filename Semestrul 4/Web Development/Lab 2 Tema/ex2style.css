@@ -1,0 +1,36 @@
+/* #box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  font-size: 3em;
+  text-align: center;
+  animation: slide 3s, colorFade 3s;
+}
+
+@keyframes slide {
+  100% {
+    float: right;
+  }
+}
+@keyframes colorFade {
+  100% {
+    background-color: red;
+  }
+} */
+#box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  font-size: 3em;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 2s ease;
+}
+
+#box:hover {
+  transform: translate(calc(100vw - 100px), calc(100vh - 100px));
+
+  background-color: red;
+}
