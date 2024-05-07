@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="./design.css" />
+    <script src="script.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <table style="width: 100%" id="tableMain">
+      <tr>
+        <th data-column="name" data-order="desc">Name</th>
+        <th data-column="grade" data-order="desc">Grade</th>
+        <th data-column="year" data-order="desc">Year</th>
+        <th data-column="age" data-order="desc">Age</th>
+      </tr>
+
+      <tbody id="tableBody"></tbody>
+      <tfoot id="tableBodyFooter">
+        <tr>
+          <td data-column="1">1</td>
+          <td data-column="2">2</td>
+          <td data-column="3">3</td>
+          <td data-column="4">4</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+  <script src="script.js"></script>
+</html>
