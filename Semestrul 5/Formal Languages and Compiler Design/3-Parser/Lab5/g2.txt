@@ -1,0 +1,32 @@
+N => program statement expression statement_list simple_statement int_expression string_expression int_exp_signs struct_statement arraydecl type declaration_statement assign_statement read_statement print_statement if_statement while_statement condition relation print_type assignee term factor string_type simple_type decision_statement else_statement comment
+E => # + - * / % = < <= == != >= > ( ) { } [ ] ; string char int array const else if of read while print constant identifier no
+S => program
+P =>
+program -> { statement_list }
+statement_list -> statement statement_list | statement
+statement -> simple_statement ; | struct_statement ; | comment
+simple_statement -> read_statement | print_statement | assign_statement | declaration_statement 
+read_statement -> read ( identifier )
+print_statement -> print ( print_type )
+print_type -> identifier | constant
+assign_statement -> identifier = assignee
+assignee -> expression | constant
+expression -> int_expression | string_expression
+int_expression -> term | term int_exp_signs int_expression
+term -> factor | term int_exp_signs factor
+factor -> identifier | constant | ( int_expression ) 
+string_expression -> string_type + string_expression 
+string_type -> string | identifier | string_expression
+int_exp_signs -> + | - | * | / | %
+declaration_statement -> type identifier
+type -> simple_type | arraydecl
+simple_type -> string | int | char 
+arraydecl -> array [ no ] simple_type
+struct_statement -> decision_statement | while_statement
+decision_statement -> if_statement | if_statement else_statement
+if_statement -> if ( condition ) { statement_list } 
+else_statement -> else { statement_list } | else if_statement
+while_statement -> while ( condition ) { statement_list }
+condition -> expression relation expression
+relation -> < | <= | == | != | >= | >
+comment -> # string

@@ -1,0 +1,22 @@
+program = {statement}
+statement = simple_statement | struct_statement 
+expression = int_expression | string_expression | comp_int_exp
+simple_statement = ( read_statement | print_statement | assign_statement | declaration_statement) “;”
+int_expression = (noconst  | identifier) int_exp_signs (int_expression | comp_int_exp | noconst | identifier)
+comp_int_exp = "(" int_expression ")"
+string_expression = (string | identifier | string_expression) + string_expression
+int_exp_signs = “+” | “-“ | “*” | “/” | "%"
+struct_statement = if_statement | while_statement
+type1 = "string" | "int" | "char" 
+arraydecl = "array" "[" no "]" type1
+type = type1|arraydecl
+declaration_statement = type identifier
+assign_statement = identifier "=" (expression | constant)
+read_statement = "read" "(" identifier ")" | “(“ conststring “)”
+print_statement = “print” “(“ identifier | constant “)”
+if_statement = "if" "(" condition ")" "{" {statement} "}" ["else" "{" {statement} "}"]
+while_statement = "while" “(“ condition “)” “{“ {statement} “}”
+condition = expression RELATION expression
+relation = "<" | "<=" | "==" | "!=" | ">=" | ">" 
+
+

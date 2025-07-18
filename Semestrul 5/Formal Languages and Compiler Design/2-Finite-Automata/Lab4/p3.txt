@@ -1,0 +1,20 @@
+{
+# p3
+# sum of n numbers
+    int n;
+    int i;
+    int sum;
+    int num;
+
+    read(n);
+    sum = 0;
+    i = 0;
+
+    while (i < n) {
+        read(num);
+        sum = sum + num;
+        i = i + 1;
+    }
+
+    print(sum);
+}

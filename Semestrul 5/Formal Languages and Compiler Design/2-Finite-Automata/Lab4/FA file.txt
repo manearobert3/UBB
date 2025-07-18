@@ -1,0 +1,22 @@
+FAFile = QLine ELine RBlock FLine .
+
+QLine = "Q" ":" StateList .
+ELine = "E" ":" SymbolList .
+RBlock = "R" ":" { TransitionLine } .
+FLine = "F" ":" StateList .
+
+StateList = State { ", " State } .
+SymbolList = Symbol { ", " Symbol } .
+
+TransitionLine = State "=" SymbolList ">" State .
+
+State = "q" Number .
+Number = Digit { Digit } .
+
+Symbol = Letter | Digit | SpecialSymbol .
+
+Letter = "a" | "b" | ... | "z" | "_" .
+Digit = "0" | "1" | ... | "9" .
+NonzeroDigit =  "1" | ... | "9"
+SpecialSymbol = "+" | "-"  .
+

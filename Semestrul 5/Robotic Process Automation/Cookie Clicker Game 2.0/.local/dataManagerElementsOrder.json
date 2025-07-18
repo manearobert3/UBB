@@ -1,0 +1,104 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "browserInstance&Sequence_1",
+        "isValidEmail&Sequence_1",
+        "email&Sequence_1",
+        "reportContent&Sequence_2",
+        "SiteInput&Sequence_1",
+        "nrOfCookies&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "utils/mailFlow.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "cookies&Sequence_1",
+        "report&Sequence_1",
+        "reportTime&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_email",
+        "out_cookies"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "utils/InputEmail.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "isValidEmail&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_email"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "browserActions/browserActionUpgrades.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "upgradeElements&Sequence_9",
+        "upgradeClass&Sequence_10"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_browserInstance"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "browserActions/browserActionStore.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "upgradeElements&Sequence_2",
+        "storeElements&Sequence_7",
+        "storeClass&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_browserInstance"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "browserActions/browserActionSpamCookie.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_browserInstance"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "browserActions/browserActionSendEmail.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "nrOfCookies&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_email",
+        "in_browserInstance"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

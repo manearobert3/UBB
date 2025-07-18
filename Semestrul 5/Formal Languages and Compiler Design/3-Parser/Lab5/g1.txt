@@ -1,0 +1,6 @@
+N => S A
+E => a b c 0 1
+S => S
+P =>
+S -> a S b S | a S | c
+A -> 0 | 1 | 0 S

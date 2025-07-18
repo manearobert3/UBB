@@ -1,0 +1,7 @@
+# p1err.*
+    int x;  
+    int 2var; // identifier cannot start with a digit
+	
+    x = 03; // leading zero is not allowed in a number
+
+

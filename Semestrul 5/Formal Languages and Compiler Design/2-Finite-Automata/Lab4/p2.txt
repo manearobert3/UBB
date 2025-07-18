@@ -1,0 +1,24 @@
+{
+# p2
+# verify if number is prime
+    int n;
+    int i;
+    int is_prime;
+
+    read(n);
+    is_prime = 1;
+    i = 2;
+
+    while (i * i <= n) {
+        if (n % i == 0) {
+            is_prime = 0;
+        }
+        i = i + 1;
+    }
+
+    if (is_prime == 1) {
+        print("Prime");
+    } else {
+        print("Not prime");
+    }
+}
